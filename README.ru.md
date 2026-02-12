@@ -16,15 +16,25 @@ pnpm add psw-plugin-serve-root-from-asset
 
 ```ts
 import { serveRootFromAsset } from 'psw-plugin-serve-root-from-asset';
-import { createPluggableServiceWorker } from '@budarin/pluggable-serviceworker';
+import { createPluggableServiceWorker, precache } from '@budarin/pluggable-serviceworker';
 
-declare const self: ServiceWorkerGlobalScope;
+const cacheName = 'app-shell';
 
 createPluggableServiceWorker(self, {
     plugins: [
+        precache({
+            cacheName,
+            assets: [
+                '/assets/index.html',
+                '/assets/main.js',
+                '/assets/styles.css',
+                ...
+            ],
+        }),
+
         serveRootFromAsset({
-            cacheName: 'app-shell',
-            rootContentAssetPath: '/index.html',
+            cacheName,
+            rootContentAssetPath: '/assets/index.html',
         }),
     ],
 });
