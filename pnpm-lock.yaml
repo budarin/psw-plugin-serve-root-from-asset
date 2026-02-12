@@ -1,0 +1,80 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@budarin/pluggable-serviceworker':
+        specifier: ^1.7.2
+        version: 1.7.2
+      '@types/node':
+        specifier: ^25.2.3
+        version: 25.2.3
+      '@types/serviceworker':
+        specifier: ^0.0.186
+        version: 0.0.186
+      '@types/web':
+        specifier: ^0.0.330
+        version: 0.0.330
+      prettier:
+        specifier: ^3.8.1
+        version: 3.8.1
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+packages:
+
+  '@budarin/http-constants@1.0.21':
+    resolution: {integrity: sha512-sNJFSxI4sJicOHIlzj+/DkW0m8z8FicqwYHwx/hwjMft66NnuGR/d7KHKB2DeE+ItPJQthUYuGU0k9xFcY/vcg==}
+
+  '@budarin/pluggable-serviceworker@1.7.2':
+    resolution: {integrity: sha512-RerYWdse2AgCNW017oBpAwv7iAEAeGommKVECHiP5Lrfo4eOZ3Y9Zz7lCC4m9ve/na7rveGBFT2SqV84rxk/xg==}
+
+  '@types/node@25.2.3':
+    resolution: {integrity: sha512-m0jEgYlYz+mDJZ2+F4v8D1AyQb+QzsNqRuI7xg1VQX/KlKS0qT9r1Mo16yo5F/MtifXFgaofIFsdFMox2SxIbQ==}
+
+  '@types/serviceworker@0.0.186':
+    resolution: {integrity: sha512-pW4pNqGk2aOfSMWxzHcuLBGDPfujYmXVwIKoQ7FAREZPcIGFntfUuSzPLNcX1/JcpXczGlk7oHAw5AuDk+GeBQ==}
+
+  '@types/web@0.0.330':
+    resolution: {integrity: sha512-645fts8JWfXUyNAOydwrNJf+fEn3mkph70tsGPI+KAL2ZQXfb1AfsnEuxK7NF+qwjxtIKqG27AbS6NsuZRFISw==}
+
+  prettier@3.8.1:
+    resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  undici-types@7.16.0:
+    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
+
+snapshots:
+
+  '@budarin/http-constants@1.0.21': {}
+
+  '@budarin/pluggable-serviceworker@1.7.2':
+    dependencies:
+      '@budarin/http-constants': 1.0.21
+
+  '@types/node@25.2.3':
+    dependencies:
+      undici-types: 7.16.0
+
+  '@types/serviceworker@0.0.186': {}
+
+  '@types/web@0.0.330': {}
+
+  prettier@3.8.1: {}
+
+  typescript@5.9.3: {}
+
+  undici-types@7.16.0: {}

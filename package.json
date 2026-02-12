@@ -1,0 +1,39 @@
+{
+    "name": "psw-plugin-serve-root-from-asset",
+    "version": "1.0.0",
+    "description": "Service Worker plugin for @budarin/pluggable-serviceworker that serves a configured cached HTML asset for root (/) navigation requests.",
+    "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "keywords": [
+        "plugin",
+        "service-worker",
+        "pluggable-serviceworker"
+    ],
+    "author": "Vadim Budarin",
+    "license": "MIT",
+    "peerDependencies": {
+        "@budarin/pluggable-serviceworker": "^1.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^25.2.3",
+        "@types/serviceworker": "^0.0.186",
+        "@types/web": "^0.0.330",
+        "prettier": "^3.8.1",
+        "typescript": "^5.9.3",
+        "@budarin/pluggable-serviceworker": "^1.7.2"
+    },
+    "scripts": {
+        "build": "tsc",
+        "type-check": "tsc -b -noEmit",
+        "clear-caches": "sh scripts/clear-caches.sh",
+        "pnpm-install": "pnpm install",
+        "upgrade-deps": "sh scripts/upgrade-deps.sh",
+        "publish-package": "pnpm build && pnpm publish --access=public"
+    }
+}
