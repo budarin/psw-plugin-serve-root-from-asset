@@ -65,7 +65,8 @@ Creates a plugin instance.
 - `rootContentAssetPath: string`
   **Required.** Request path/key of the asset inside the cache (for example, `/index.html`).
 
-- **order.** Optional order number. By default - 0;
+- `order`
+  **Optional** Plugin order number. By default - 0;
 
 ## Behavior
 
