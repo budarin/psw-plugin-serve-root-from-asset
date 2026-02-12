@@ -3,13 +3,14 @@ import type { Plugin } from '@budarin/pluggable-serviceworker';
 export interface ServeRootFromAssetConfig {
     cacheName: string;
     rootContentAssetPath: string;
+    order?: number;
 }
 
 export function serveRootFromAsset(config: ServeRootFromAssetConfig): Plugin {
-    const { cacheName, rootContentAssetPath } = config;
+    const { cacheName, rootContentAssetPath, order = 0 } = config;
 
     return {
-        order: -10,
+        order,
         name: 'serve-root-from-asset',
 
         async fetch(event, logger) {
