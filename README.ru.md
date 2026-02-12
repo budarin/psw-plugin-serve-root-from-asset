@@ -59,7 +59,7 @@ createPluggableServiceWorker(self, {
 - `rootContentAssetPath: string`
   **Обязательно.** Ключ/путь, под которым ассет лежит в кеше (например, `/index.html`).
 
-- `order`
+- `order: number`
   **Опционально** Порядковый номер плагина. По-умочанию - 0;
 
 ## Поведение
