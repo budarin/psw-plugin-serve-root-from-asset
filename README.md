@@ -1,7 +1,6 @@
 # psw-plugin-serve-root-from-asset
 
-[Русская версия (Russian)](https://github.com/budarin/
-psw-plugin-serve-root-from-asset/blob/master/README.ru.md)
+[Русская версия](https://github.com/budarin/psw-plugin-serve-root-from-asset/blob/master/README.ru.md)
 
 Service Worker plugin for `@budarin/pluggable-serviceworker` that serves a configured cached HTML asset for root (`/`) navigation requests.
 
