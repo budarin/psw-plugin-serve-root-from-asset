@@ -1,21 +1,21 @@
 ## Описание
 
-`psw-plugin-serve-root-from-asset` — плагин для `@budarin/pluggable-serviceworker`, который отдает заранее закэшированный HTML‑ассет в ответ на навигационные запросы к корню (`/`).
+`@budarin/psw-plugin-serve-root-from-asset` — плагин для `@budarin/pluggable-serviceworker`, который отдает заранее закэшированный HTML‑ассет в ответ на навигационные запросы к корню (`/`).
 
 ## Установка
 
 ```bash
-npm install psw-plugin-serve-root-from-asset
+npm install @budarin/psw-plugin-serve-root-from-asset
 # или
-yarn add psw-plugin-serve-root-from-asset
+yarn add @budarin/psw-plugin-serve-root-from-asset
 # или
-pnpm add psw-plugin-serve-root-from-asset
+pnpm add @budarin/psw-plugin-serve-root-from-asset
 ```
 
 ## Пример использования
 
 ```ts
-import { serveRootFromAsset } from 'psw-plugin-serve-root-from-asset';
+import { serveRootFromAsset } from '@budarin/psw-plugin-serve-root-from-asset';
 import { createPluggableServiceWorker, precache } from '@budarin/pluggable-serviceworker';
 
 const cacheName = 'app-shell';
