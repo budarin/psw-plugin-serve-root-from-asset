@@ -57,7 +57,7 @@ Creates a plugin instance.
 
 ## Behavior
 
-- Only requests with `URL.pathname === '/'` are handled.
+- Only navigation requests with `URL.pathname === '/'` are handled.
 - For other paths, the plugin returns `undefined` immediately.
 - For `/`:
     - opens the cache with `cacheName`;
