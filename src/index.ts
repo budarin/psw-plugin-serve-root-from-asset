@@ -6,25 +6,29 @@ export interface ServeRootFromAssetConfig {
 }
 
 export function serveRootFromAsset(config: ServeRootFromAssetConfig): Plugin {
-    const { cacheName, rootContentAssetPath: assetPath } = config;
+    const { cacheName, rootContentAssetPath } = config;
 
     return {
-        name: 'serve-root-from-asset',
         order: -10,
+        name: 'serve-root-from-asset',
 
         async fetch(event, logger) {
             const url = new URL(event.request.url);
 
-            if (url.pathname !== '/') {
+            const isNavigation =
+                event.request.mode === 'navigate' ||
+                event.request.headers.get('accept')?.includes('text/html');
+
+            if (!isNavigation || url.pathname !== '/') {
                 return undefined;
             }
 
             const cache = await caches.open(cacheName);
-            const cached = await cache.match(assetPath);
+            const cached = await cache.match(rootContentAssetPath);
 
             if (!cached) {
                 logger.warn(
-                    `serve-root-from-asset: "${assetPath}" не найден в кэше "${cacheName}"`
+                    `serve-root-from-asset: asset "${rootContentAssetPath}" not found in the cache "${cacheName}"`
                 );
                 return undefined;
             }
