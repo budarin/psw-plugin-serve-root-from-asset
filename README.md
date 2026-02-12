@@ -5,9 +5,9 @@
 Service Worker plugin for `@budarin/pluggable-serviceworker` that serves a configured cached HTML asset for root (`/`) navigation requests.
 
 [![CI](https://github.com/budarin/psw-plugin-serve-root-from-asset/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/budarin/psw-plugin-serve-root-from-asset/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@budarin/psw-plugin-serve-root-from-asset?color=cb0000)](https://www.npmjs.com/package/@budarin/psw-plugin-serve-root-from-asset)
-[![npm](https://img.shields.io/npm/dt/@budarin/psw-plugin-serve-root-from-asset)](https://www.npmjs.com/package/@budarin/psw-plugin-serve-root-from-asset)
-[![bundle](https://img.shields.io/bundlephobia/minzip/@budarin/psw-plugin-serve-root-from-asset)](https://bundlephobia.com/result?p=@budarin/psw-plugin-serve-root-from-asset)
+[![npm](https://img.shields.io/npm/v/psw-plugin-serve-root-from-asset?color=cb0000)](https://www.npmjs.com/package/psw-plugin-serve-root-from-asset)
+[![npm](https://img.shields.io/npm/dt/psw-plugin-serve-root-from-asset)](https://www.npmjs.com/package/psw-plugin-serve-root-from-asset)
+[![bundle](https://img.shields.io/bundlephobia/minzip/psw-plugin-serve-root-from-asset)](https://bundlephobia.com/result?p=psw-plugin-serve-root-from-asset)
 [![GitHub](https://img.shields.io/github/license/budarin/psw-plugin-serve-root-from-asset)](https://github.com/budarin/psw-plugin-serve-root-from-asset)
 
 ## Installation
