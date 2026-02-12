@@ -1,3 +1,5 @@
+# @budarin/psw-plugin-serve-root-from-asset
+
 ## Описание
 
 `@budarin/psw-plugin-serve-root-from-asset` — плагин для `@budarin/pluggable-serviceworker`, который отдает заранее закэшированный HTML‑ассет в ответ на навигационные запросы к корню (`/`).

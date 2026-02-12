@@ -1,4 +1,4 @@
-# psw-plugin-serve-root-from-asset
+# @budarin/psw-plugin-serve-root-from-asset
 
 [Русская версия](https://github.com/budarin/psw-plugin-serve-root-from-asset/blob/master/README.ru.md)
 
