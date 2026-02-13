@@ -82,3 +82,7 @@ Creates a plugin instance.
 
 - The plugin **does not** populate the cache. It assumes that another part of your Service Worker (e.g. a precache phase) has already added the root asset into the cache.
 - The plugin only affects root (`/`) navigation; all other requests pass through.
+
+## 🤝 License
+
+MIT © budarin
