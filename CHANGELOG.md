@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.8] - 2026-02-16
+
+### Added
+
+- **Documentation:** Preamble in README and README.ru describing the use case: frontend built into an `assets/` (or similar) folder with no physical `index.html` at root, and how the plugin serves the cached HTML for `/` requests.
+
 ## [1.0.7] - 2026-02-16
 
 ### Fixed
