@@ -18,12 +18,13 @@ pnpm add @budarin/psw-plugin-serve-root-from-asset
 
 ```ts
 import { serveRootFromAsset } from '@budarin/psw-plugin-serve-root-from-asset';
-import { createPluggableServiceWorker, precache } from '@budarin/pluggable-serviceworker';
+import { initServiceWorker } from '@budarin/pluggable-serviceworker';
+import { precache } from '@budarin/pluggable-serviceworker/plugins';
 
 const cacheName = 'app-shell';
 
-createPluggableServiceWorker(self, {
-    plugins: [
+initServiceWorker(
+    [
         precache({
             cacheName,
             assets: [
@@ -33,13 +34,13 @@ createPluggableServiceWorker(self, {
                 ...
             ],
         }),
-
         serveRootFromAsset({
             cacheName,
             rootContentAssetPath: '/assets/index.html',
         }),
     ],
-});
+    { version: '1.0.0' }
+);
 ```
 
 Плагин перехватывает `fetch`‑события для пути `/` и отвечает содержимым HTML‑файла, который уже лежит в Cache Storage под указанным ключом.
@@ -60,7 +61,7 @@ createPluggableServiceWorker(self, {
   **Обязательно.** Ключ/путь, под которым ассет лежит в кеше (например, `/index.html`).
 
 - `order: number`
-  **Опционально** Порядковый номер плагина. По-умочанию - 0;
+  **Опционально.** Порядковый номер плагина. По умолчанию — 0.
 
 ## Поведение
 

@@ -24,12 +24,13 @@ pnpm add @budarin/psw-plugin-serve-root-from-asset
 
 ```ts
 import { serveRootFromAsset } from '@budarin/psw-plugin-serve-root-from-asset';
-import { createPluggableServiceWorker, precache } from '@budarin/pluggable-serviceworker';
+import { initServiceWorker } from '@budarin/pluggable-serviceworker';
+import { precache } from '@budarin/pluggable-serviceworker/plugins';
 
 const cacheName = 'app-shell';
 
-createPluggableServiceWorker(self, {
-    plugins: [
+initServiceWorker(
+    [
         precache({
             cacheName,
             assets: [
@@ -39,13 +40,13 @@ createPluggableServiceWorker(self, {
                 ...
             ],
         }),
-
         serveRootFromAsset({
             cacheName,
             rootContentAssetPath: '/assets/index.html',
         }),
     ],
-});
+    { version: '1.0.0' }
+);
 ```
 
 The plugin intercepts `fetch` events for the root path `/` and responds with a cached asset from the specified cache.
@@ -66,7 +67,7 @@ Creates a plugin instance.
   **Required.** Request path/key of the asset inside the cache (for example, `/index.html`).
 
 - `order: number`
-  **Optional** Plugin's order no. By default - 0;
+  **Optional.** Plugin order. Default — 0.
 
 ## Behavior
 
