@@ -8,7 +8,7 @@ Service Worker plugin for `@budarin/pluggable-serviceworker` that serves a confi
 [![npm](https://img.shields.io/npm/v/@budarin/psw-plugin-serve-root-from-asset?color=cb0000)](https://www.npmjs.com/package/@budarin/psw-plugin-serve-root-from-asset)
 [![npm](https://img.shields.io/npm/dt/@budarin/psw-plugin-serve-root-from-asset)](https://www.npmjs.com/package/@budarin/psw-plugin-serve-root-from-asset)
 [![bundle](https://img.shields.io/bundlephobia/minzip/@budarin/psw-plugin-serve-root-from-asset)](https://bundlephobia.com/result?p=@budarin/psw-plugin-serve-root-from-asset)
-[![GitHub](https://img.shields.io/github/license/budarin/psw-plugin-serve-root-from-asset)](https://github.com/budarin/psw-plugin-serve-root-from-asset)
+[![license](https://img.shields.io/npm/l/@budarin/psw-plugin-serve-root-from-asset)](https://github.com/budarin/psw-plugin-serve-root-from-asset/blob/master/LICENSE)
 
 In many production setups the frontend build is emitted entirely into a dedicated directory (e.g. `assets/` or `static/`). Scripts, styles, and the main HTML are served from that path. Browsers and links, however, typically request the entry page from the site root (`/`), where no physical `index.html` exists—the real file lives inside the assets folder. This plugin lets your Service Worker respond to root navigation requests with a cached copy of that HTML asset, so the app loads correctly when users open the root URL or refresh on `/`.
 
