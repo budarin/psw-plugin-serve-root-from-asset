@@ -2,7 +2,7 @@
 
 [Русская версия](https://github.com/budarin/psw-plugin-serve-root-from-asset/blob/master/README.ru.md)
 
-Service Worker plugin for `@budarin/pluggable-serviceworker` that serves a configured cached HTML asset for root (`/`) navigation requests.
+Service Worker plugin for [@budarin/pluggable-serviceworker](https://www.npmjs.com/package/@budarin/pluggable-serviceworker) that serves a configured cached HTML asset for root (`/`) navigation requests.
 
 [![CI](https://github.com/budarin/psw-plugin-serve-root-from-asset/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/budarin/psw-plugin-serve-root-from-asset/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/@budarin/psw-plugin-serve-root-from-asset?color=cb0000)](https://www.npmjs.com/package/@budarin/psw-plugin-serve-root-from-asset)

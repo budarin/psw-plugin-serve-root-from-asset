@@ -1,6 +1,6 @@
 # @budarin/psw-plugin-serve-root-from-asset
 
-Плагин для `@budarin/pluggable-serviceworker`: отдаёт заранее закэшированный HTML‑ассет в ответ на навигационные запросы к корню (`/`).
+Плагин для [@budarin/pluggable-serviceworker](https://www.npmjs.com/package/@budarin/pluggable-serviceworker): отдаёт заранее закэшированный HTML‑ассет в ответ на навигационные запросы к корню (`/`).
 
 ## Описание
 
