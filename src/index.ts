@@ -18,6 +18,9 @@ const DEFAULT_HEADERS: HeadersInit = {
     'Expires': '0',
 };
 
+/** Reused on every request to avoid allocating a new Headers for defaults. */
+const DEFAULT_HEADERS_OBJ = new Headers(DEFAULT_HEADERS);
+
 export function serveRootFromAsset(config: ServeRootFromAssetConfig): Plugin {
     const { cacheName, rootContentAssetPath, order = 0, headers } = config;
 
@@ -47,9 +50,8 @@ export function serveRootFromAsset(config: ServeRootFromAssetConfig): Plugin {
             }
 
             const baseHeaders = new Headers(cached.headers);
-            const defaultHeaders = new Headers(DEFAULT_HEADERS);
 
-            defaultHeaders.forEach((value, key) => {
+            DEFAULT_HEADERS_OBJ.forEach((value, key) => {
                 baseHeaders.set(key, value);
             });
 
