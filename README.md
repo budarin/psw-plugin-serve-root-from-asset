@@ -76,7 +76,7 @@ Creates a plugin instance.
   You may provide:
   - a static `HeadersInit` (object/array/`Headers`),
   - or a function that receives the current `request` and the found `cached` response and returns headers to apply.  
-  These headers are merged on top of the headers from the cached response.
+  The plugin always sets default headers that disable browser caching (`Cache-Control: no-cache, no-store, must-revalidate`, `Pragma: no-cache`, `Expires: 0`) to avoid conflicts between the browser's HTTP cache and Service Worker Cache Storage. Headers from this field are merged on top of the defaults and can override them.
 
   **Examples:**
 

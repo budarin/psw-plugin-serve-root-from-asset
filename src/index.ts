@@ -12,6 +12,12 @@ export interface ServeRootFromAssetConfig {
           }) => HeadersInit);
 }
 
+const DEFAULT_HEADERS: HeadersInit = {
+    'Cache-Control': 'no-cache, no-store, must-revalidate',
+    'Pragma': 'no-cache',
+    'Expires': '0',
+};
+
 export function serveRootFromAsset(config: ServeRootFromAssetConfig): Plugin {
     const { cacheName, rootContentAssetPath, order = 0, headers } = config;
 
@@ -40,21 +46,24 @@ export function serveRootFromAsset(config: ServeRootFromAssetConfig): Plugin {
                 return undefined;
             }
 
-            if (!headers) {
-                return cached;
-            }
-
-            const overrides =
-                typeof headers === 'function'
-                    ? headers({ request: event.request, cached })
-                    : headers;
-
             const baseHeaders = new Headers(cached.headers);
-            const overrideHeaders = new Headers(overrides);
+            const defaultHeaders = new Headers(DEFAULT_HEADERS);
 
-            overrideHeaders.forEach((value, key) => {
+            defaultHeaders.forEach((value, key) => {
                 baseHeaders.set(key, value);
             });
+
+            if (headers) {
+                const overrideHeaders = new Headers(
+                    typeof headers === 'function'
+                        ? headers({ request: event.request, cached })
+                        : headers
+                );
+
+                overrideHeaders.forEach((value, key) => {
+                    baseHeaders.set(key, value);
+                });
+            }
 
             return new Response(cached.body, {
                 status: cached.status,

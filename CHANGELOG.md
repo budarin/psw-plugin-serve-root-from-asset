@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **`headers` option:** Added optional `headers` field to `ServeRootFromAssetConfig` that allows setting or overriding HTTP headers when serving the cached root asset. Supports both static `HeadersInit` objects and dynamic functions that receive the current `request` and `cached` response.
 
+### Changed
+
+- **Default headers:** The plugin now always sets default headers (`Cache-Control: no-cache, no-store, must-revalidate`, `Pragma: no-cache`, `Expires: 0`) to disable browser caching and avoid conflicts between the browser's HTTP cache and Service Worker Cache Storage. User-provided headers are merged on top of these defaults and can override them.
+
 ## [1.0.10] - 2026-02-17
 
 ### Changed
