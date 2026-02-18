@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-02-18
+
+### Added
+
+- **`headers` option:** Added optional `headers` field to `ServeRootFromAssetConfig` that allows setting or overriding HTTP headers when serving the cached root asset. Supports both static `HeadersInit` objects and dynamic functions that receive the current `request` and `cached` response.
+
 ## [1.0.10] - 2026-02-17
 
 ### Changed

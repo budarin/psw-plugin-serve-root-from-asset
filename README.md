@@ -71,6 +71,39 @@ Creates a plugin instance.
 - `order: number`
   **Optional.** Plugin order. Default — 0.
 
+- `headers: HeadersInit | (params: { request: Request; cached: Response }) => HeadersInit`
+  **Optional.** Extra headers that will be added or overridden on the cached response for `/`.  
+  You may provide:
+  - a static `HeadersInit` (object/array/`Headers`),
+  - or a function that receives the current `request` and the found `cached` response and returns headers to apply.  
+  These headers are merged on top of the headers from the cached response.
+
+  **Examples:**
+
+  Static object:
+  ```ts
+  serveRootFromAsset({
+      cacheName,
+      rootContentAssetPath: '/assets/index.html',
+      headers: {
+          'Cache-Control': 'no-cache',
+          'X-Custom-Header': 'value',
+      },
+  });
+  ```
+
+  Function with dynamic headers:
+  ```ts
+  serveRootFromAsset({
+      cacheName,
+      rootContentAssetPath: '/assets/index.html',
+      headers: ({ request, cached }) => ({
+          'Cache-Control': request.url.includes('preview') ? 'no-store' : 'public, max-age=3600',
+          'X-Served-From': 'service-worker',
+      }),
+  });
+  ```
+
 ## Behavior
 
 - Only navigation requests with `URL.pathname === '/'` are handled.

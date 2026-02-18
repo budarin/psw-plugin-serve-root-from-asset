@@ -65,6 +65,39 @@ initServiceWorker(
 - `order: number`
   **Опционально.** Порядковый номер плагина. По умолчанию — 0.
 
+- `headers: HeadersInit | (params: { request: Request; cached: Response }) => HeadersInit`
+  **Опционально.** Дополнительные заголовки, которые будут добавлены или переопределены при отдаче ответа из кеша для `/`.  
+  Можно передать:
+  - статический объект/массив/`Headers`,
+  - или функцию, которая получит текущий `request` и найденный `cached`‑ответ и вернёт набор заголовков.  
+  Заголовки из этого поля накладываются поверх заголовков из кешированного ответа.
+
+  **Примеры:**
+
+  Статический объект:
+  ```ts
+  serveRootFromAsset({
+      cacheName,
+      rootContentAssetPath: '/assets/index.html',
+      headers: {
+          'Cache-Control': 'no-cache',
+          'X-Custom-Header': 'value',
+      },
+  });
+  ```
+
+  Функция с динамическими заголовками:
+  ```ts
+  serveRootFromAsset({
+      cacheName,
+      rootContentAssetPath: '/assets/index.html',
+      headers: ({ request, cached }) => ({
+          'Cache-Control': request.url.includes('preview') ? 'no-store' : 'public, max-age=3600',
+          'X-Served-From': 'service-worker',
+      }),
+  });
+  ```
+
 ## Поведение
 
 - Обрабатываются только навигационные запросы, у которых `URL.pathname === '/'`.

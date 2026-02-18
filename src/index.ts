@@ -4,10 +4,16 @@ export interface ServeRootFromAssetConfig {
     cacheName: string;
     rootContentAssetPath: string;
     order?: number;
+    headers?:
+        | HeadersInit
+        | ((params: {
+              request: Request;
+              cached: Response;
+          }) => HeadersInit);
 }
 
 export function serveRootFromAsset(config: ServeRootFromAssetConfig): Plugin {
-    const { cacheName, rootContentAssetPath, order = 0 } = config;
+    const { cacheName, rootContentAssetPath, order = 0, headers } = config;
 
     return {
         order,
@@ -34,7 +40,27 @@ export function serveRootFromAsset(config: ServeRootFromAssetConfig): Plugin {
                 return undefined;
             }
 
-            return cached;
+            if (!headers) {
+                return cached;
+            }
+
+            const overrides =
+                typeof headers === 'function'
+                    ? headers({ request: event.request, cached })
+                    : headers;
+
+            const baseHeaders = new Headers(cached.headers);
+            const overrideHeaders = new Headers(overrides);
+
+            overrideHeaders.forEach((value, key) => {
+                baseHeaders.set(key, value);
+            });
+
+            return new Response(cached.body, {
+                status: cached.status,
+                statusText: cached.statusText,
+                headers: baseHeaders,
+            });
         },
     };
 }
