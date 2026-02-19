@@ -72,37 +72,41 @@ Creates a plugin instance.
   **Optional.** Plugin order. Default — 0.
 
 - `headers: HeadersInit | (params: { request: Request; cached: Response }) => HeadersInit`
-  **Optional.** Extra headers that will be added or overridden on the cached response for `/`.  
+  **Optional.** Extra headers that will be added or overridden on the cached response for `/`.
   You may provide:
-  - a static `HeadersInit` (object/array/`Headers`),
-  - or a function that receives the current `request` and the found `cached` response and returns headers to apply.  
-  The plugin always sets default headers that disable browser caching (`Cache-Control: no-cache, no-store, must-revalidate`, `Pragma: no-cache`, `Expires: 0`) to avoid conflicts between the browser's HTTP cache and Service Worker Cache Storage. Headers from this field are merged on top of the defaults and can override them.
+    - a static `HeadersInit` (object/array/`Headers`),
+    - or a function that receives the current `request` and the found `cached` response and returns headers to apply.
+      The plugin always sets default headers that disable browser caching (`Cache-Control: no-cache, no-store, must-revalidate`, `Pragma: no-cache`, `Expires: 0`) to avoid conflicts between the browser's HTTP cache and Service Worker Cache Storage. Headers from this field are merged on top of the defaults and can override them.
 
-  **Examples:**
+    **Examples:**
 
-  Static object:
-  ```ts
-  serveRootFromAsset({
-      cacheName,
-      rootContentAssetPath: '/assets/index.html',
-      headers: {
-          'Cache-Control': 'no-cache',
-          'X-Custom-Header': 'value',
-      },
-  });
-  ```
+    Static object:
 
-  Function with dynamic headers:
-  ```ts
-  serveRootFromAsset({
-      cacheName,
-      rootContentAssetPath: '/assets/index.html',
-      headers: ({ request, cached }) => ({
-          'Cache-Control': request.url.includes('preview') ? 'no-store' : 'public, max-age=3600',
-          'X-Served-From': 'service-worker',
-      }),
-  });
-  ```
+    ```ts
+    serveRootFromAsset({
+        cacheName,
+        rootContentAssetPath: '/assets/index.html',
+        headers: {
+            'Cache-Control': 'no-cache',
+            'X-Custom-Header': 'value',
+        },
+    });
+    ```
+
+    Function with dynamic headers:
+
+    ```ts
+    serveRootFromAsset({
+        cacheName,
+        rootContentAssetPath: '/assets/index.html',
+        headers: ({ request, cached }) => ({
+            'Cache-Control': request.url.includes('preview')
+                ? 'no-store'
+                : 'public, max-age=3600',
+            'X-Served-From': 'service-worker',
+        }),
+    });
+    ```
 
 ## Behavior
 

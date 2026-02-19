@@ -12,8 +12,8 @@ importers:
         specifier: ^1.10.9
         version: 1.10.9
       '@types/node':
-        specifier: ^25.2.3
-        version: 25.2.3
+        specifier: ^25.3.0
+        version: 25.3.0
       '@types/serviceworker':
         specifier: ^0.0.191
         version: 0.0.191
@@ -35,8 +35,8 @@ packages:
   '@budarin/pluggable-serviceworker@1.10.9':
     resolution: {integrity: sha512-oVLLotzSBMpzbio5LTorNXuwIWzF6QO77psMlO+dYQYyROZ+EGf/cfXfy4k1Oa3Ho2vNrXLJZYi+T35T9AX7qw==}
 
-  '@types/node@25.2.3':
-    resolution: {integrity: sha512-m0jEgYlYz+mDJZ2+F4v8D1AyQb+QzsNqRuI7xg1VQX/KlKS0qT9r1Mo16yo5F/MtifXFgaofIFsdFMox2SxIbQ==}
+  '@types/node@25.3.0':
+    resolution: {integrity: sha512-4K3bqJpXpqfg2XKGK9bpDTc6xO/xoUP/RBWS7AtRMug6zZFaRekiLzjVtAoZMquxoAbzBvy5nxQ7veS5eYzf8A==}
 
   '@types/serviceworker@0.0.191':
     resolution: {integrity: sha512-DFQspa5cuobxgUuoeGGYBW45oOvPvgYp68Yk24mLdMGGGcgoH0nj5TawBZdRpIqPV8kkZodcQrqradnwGhRVNQ==}
@@ -54,8 +54,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@7.16.0:
-    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
+  undici-types@7.18.2:
+    resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
 
 snapshots:
 
@@ -65,9 +65,9 @@ snapshots:
     dependencies:
       '@budarin/http-constants': 1.0.22
 
-  '@types/node@25.2.3':
+  '@types/node@25.3.0':
     dependencies:
-      undici-types: 7.16.0
+      undici-types: 7.18.2
 
   '@types/serviceworker@0.0.191': {}
 
@@ -77,4 +77,4 @@ snapshots:
 
   typescript@5.9.3: {}
 
-  undici-types@7.16.0: {}
+  undici-types@7.18.2: {}
