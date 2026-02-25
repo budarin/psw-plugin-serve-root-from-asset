@@ -1,6 +1,6 @@
 {
     "name": "@budarin/psw-plugin-serve-root-from-asset",
-    "version": "1.1.2",
+    "version": "1.2.0",
     "description": "Service Worker plugin for @budarin/pluggable-serviceworker that serves a configured cached HTML asset for root (/) navigation requests.",
     "type": "module",
     "main": "dist/index.js",
@@ -21,10 +21,10 @@
         "@budarin/pluggable-serviceworker": "^1.0.0"
     },
     "devDependencies": {
-        "@budarin/pluggable-serviceworker": "^1.10.9",
+        "@budarin/pluggable-serviceworker": "^1.11.0",
         "@types/node": "^25.3.0",
-        "@types/serviceworker": "^0.0.191",
-        "@types/web": "^0.0.336",
+        "@types/serviceworker": "^0.0.192",
+        "@types/web": "^0.0.338",
         "prettier": "^3.8.1",
         "typescript": "^5.9.3"
     },

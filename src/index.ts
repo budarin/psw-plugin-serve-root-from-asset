@@ -28,22 +28,20 @@ export function serveRootFromAsset(config: ServeRootFromAssetConfig): Plugin {
         order,
         name: 'serve-root-from-asset',
 
-        async fetch(event, logger) {
-            const url = new URL(event.request.url);
-
+        async fetch(event, context) {
             const isNavigation =
                 event.request.mode === 'navigate' ||
                 event.request.headers.get('accept')?.includes('text/html');
+            if (!isNavigation) return undefined;
 
-            if (!isNavigation || url.pathname !== '/') {
-                return undefined;
-            }
+            const url = new URL(event.request.url);
+            if (url.pathname !== '/') return undefined;
 
             const cache = await caches.open(cacheName);
             const cached = await cache.match(rootContentAssetPath);
 
             if (!cached) {
-                logger.warn(
+                context.logger?.warn(
                     `serve-root-from-asset: asset "${rootContentAssetPath}" not found in the cache "${cacheName}"`
                 );
                 return undefined;

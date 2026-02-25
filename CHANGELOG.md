@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-02-25
+
+### Changed
+
+- **@budarin/pluggable-serviceworker ^1.11.0:** Updated plugin to use new handler signature `(event, context)` instead of `(event, logger)`. Use `context.logger` for logging. Requires `@budarin/pluggable-serviceworker` ^1.11.0.
+- **Performance:** Defer URL parsing until after navigation check; skip `new URL()` for non-navigation requests (scripts, styles, XHR, etc.).
+
 ## [1.1.1] - 2026-02-18
 
 ### Changed
