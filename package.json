@@ -21,7 +21,7 @@
         "@budarin/pluggable-serviceworker": "^1.0.0"
     },
     "devDependencies": {
-        "@budarin/pluggable-serviceworker": "^1.16.0",
+        "@budarin/pluggable-serviceworker": "^1.17.1",
         "@types/node": "^25.3.2",
         "@types/serviceworker": "^0.0.192",
         "@types/web": "^0.0.338",
