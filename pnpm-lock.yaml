@@ -9,17 +9,17 @@ importers:
   .:
     devDependencies:
       '@budarin/pluggable-serviceworker':
-        specifier: ^1.17.1
-        version: 1.17.1
+        specifier: ^1.17.2
+        version: 1.17.2
       '@types/node':
-        specifier: ^25.3.2
-        version: 25.3.2
+        specifier: ^25.3.3
+        version: 25.3.3
       '@types/serviceworker':
-        specifier: ^0.0.192
-        version: 0.0.192
+        specifier: ^0.0.193
+        version: 0.0.193
       '@types/web':
-        specifier: ^0.0.338
-        version: 0.0.338
+        specifier: ^0.0.339
+        version: 0.0.339
       prettier:
         specifier: ^3.8.1
         version: 3.8.1
@@ -32,17 +32,17 @@ packages:
   '@budarin/http-constants@1.0.22':
     resolution: {integrity: sha512-XZu3JmErHaTTwDPnsGikjwzZ/NHS3DWQNcxmRemhY1jJTr9Va5Arnk4mbE6lVAg1bir1AYyO1zygzQTjiSEtZw==}
 
-  '@budarin/pluggable-serviceworker@1.17.1':
-    resolution: {integrity: sha512-otIS/pmetQNFjuGiu/5S07cirUSbR2Jwc53grQTr1hoQRpVnHiVN6zTODZPfDOHfE9qPHGqbgsQT1fDc2A3ESQ==}
+  '@budarin/pluggable-serviceworker@1.17.2':
+    resolution: {integrity: sha512-C/BHedbsXXBnpk9dp/qVKtXQv2Ewfuwputogeyn2QLYcejUQSMRnhXtglpFy3/t3TAp+s3w0LSQsWXgcsPhDyg==}
 
-  '@types/node@25.3.2':
-    resolution: {integrity: sha512-RpV6r/ij22zRRdyBPcxDeKAzH43phWVKEjL2iksqo1Vz3CuBUrgmPpPhALKiRfU7OMCmeeO9vECBMsV0hMTG8Q==}
+  '@types/node@25.3.3':
+    resolution: {integrity: sha512-DpzbrH7wIcBaJibpKo9nnSQL0MTRdnWttGyE5haGwK86xgMOkFLp7vEyfQPGLOJh5wNYiJ3V9PmUMDhV9u8kkQ==}
 
-  '@types/serviceworker@0.0.192':
-    resolution: {integrity: sha512-v9ve7JDYs3JnWow0OcSEtodcxlArlmOGFxb7nPMMRzQd8wEBueKA8wIvzQj8OQWeMd75DuqB2RCLoKxZByEbhw==}
+  '@types/serviceworker@0.0.193':
+    resolution: {integrity: sha512-3nZH1ahex0tTmAuCRF/zJWsxq730GW9xItPm5U4EtZYF0MdqKEdyypgOteJnikWZ8QGPGetEkooSD4z7nQblRw==}
 
-  '@types/web@0.0.338':
-    resolution: {integrity: sha512-zek7Yu+9x/lfD40oA4Biw7GZuV7yIcvNAlhxGh+40NLO13G7rC2qeNqegcSthV6wq3L2z+8+ERj3GXgjoU1MvA==}
+  '@types/web@0.0.339':
+    resolution: {integrity: sha512-bckDV6OqUF2vnpXMAR7Qo9Wc6gAiGGqupU0RiHo7GVvgZcGdpTf5T3MIB4s83hxNp83VNCgRh2L4OuhL0zxMFw==}
 
   prettier@3.8.1:
     resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
@@ -61,17 +61,17 @@ snapshots:
 
   '@budarin/http-constants@1.0.22': {}
 
-  '@budarin/pluggable-serviceworker@1.17.1':
+  '@budarin/pluggable-serviceworker@1.17.2':
     dependencies:
       '@budarin/http-constants': 1.0.22
 
-  '@types/node@25.3.2':
+  '@types/node@25.3.3':
     dependencies:
       undici-types: 7.18.2
 
-  '@types/serviceworker@0.0.192': {}
+  '@types/serviceworker@0.0.193': {}
 
-  '@types/web@0.0.338': {}
+  '@types/web@0.0.339': {}
 
   prettier@3.8.1: {}
 
