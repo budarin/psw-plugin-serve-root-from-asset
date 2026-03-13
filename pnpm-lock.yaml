@@ -9,17 +9,17 @@ importers:
   .:
     devDependencies:
       '@budarin/pluggable-serviceworker':
-        specifier: ^1.17.2
-        version: 1.17.2
+        specifier: ^1.17.6
+        version: 1.17.6
       '@types/node':
-        specifier: ^25.3.3
-        version: 25.3.3
+        specifier: ^25.5.0
+        version: 25.5.0
       '@types/serviceworker':
         specifier: ^0.0.193
         version: 0.0.193
       '@types/web':
-        specifier: ^0.0.339
-        version: 0.0.339
+        specifier: ^0.0.342
+        version: 0.0.342
       prettier:
         specifier: ^3.8.1
         version: 3.8.1
@@ -32,17 +32,17 @@ packages:
   '@budarin/http-constants@1.0.22':
     resolution: {integrity: sha512-XZu3JmErHaTTwDPnsGikjwzZ/NHS3DWQNcxmRemhY1jJTr9Va5Arnk4mbE6lVAg1bir1AYyO1zygzQTjiSEtZw==}
 
-  '@budarin/pluggable-serviceworker@1.17.2':
-    resolution: {integrity: sha512-C/BHedbsXXBnpk9dp/qVKtXQv2Ewfuwputogeyn2QLYcejUQSMRnhXtglpFy3/t3TAp+s3w0LSQsWXgcsPhDyg==}
+  '@budarin/pluggable-serviceworker@1.17.6':
+    resolution: {integrity: sha512-u5Pq2+vZnXdGmhP5D1KmFnwzsbwFxdd/4ayw1XTjbri3sUbiGCLIgyzJTc2hblpu2B1/VXYfAdHgbqZKTj4vEQ==}
 
-  '@types/node@25.3.3':
-    resolution: {integrity: sha512-DpzbrH7wIcBaJibpKo9nnSQL0MTRdnWttGyE5haGwK86xgMOkFLp7vEyfQPGLOJh5wNYiJ3V9PmUMDhV9u8kkQ==}
+  '@types/node@25.5.0':
+    resolution: {integrity: sha512-jp2P3tQMSxWugkCUKLRPVUpGaL5MVFwF8RDuSRztfwgN1wmqJeMSbKlnEtQqU8UrhTmzEmZdu2I6v2dpp7XIxw==}
 
   '@types/serviceworker@0.0.193':
     resolution: {integrity: sha512-3nZH1ahex0tTmAuCRF/zJWsxq730GW9xItPm5U4EtZYF0MdqKEdyypgOteJnikWZ8QGPGetEkooSD4z7nQblRw==}
 
-  '@types/web@0.0.339':
-    resolution: {integrity: sha512-bckDV6OqUF2vnpXMAR7Qo9Wc6gAiGGqupU0RiHo7GVvgZcGdpTf5T3MIB4s83hxNp83VNCgRh2L4OuhL0zxMFw==}
+  '@types/web@0.0.342':
+    resolution: {integrity: sha512-eOgPIw9804akkGGy4phVXnO39oPXXnUTfNBlwjWFB4cjMMA6HuopoCGXLe3TERNjh2dlDYczfPL9PMTylNX/yQ==}
 
   prettier@3.8.1:
     resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
@@ -61,17 +61,17 @@ snapshots:
 
   '@budarin/http-constants@1.0.22': {}
 
-  '@budarin/pluggable-serviceworker@1.17.2':
+  '@budarin/pluggable-serviceworker@1.17.6':
     dependencies:
       '@budarin/http-constants': 1.0.22
 
-  '@types/node@25.3.3':
+  '@types/node@25.5.0':
     dependencies:
       undici-types: 7.18.2
 
   '@types/serviceworker@0.0.193': {}
 
-  '@types/web@0.0.339': {}
+  '@types/web@0.0.342': {}
 
   prettier@3.8.1: {}
 

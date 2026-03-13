@@ -41,7 +41,7 @@ export function serveRootFromAsset(config: ServeRootFromAssetConfig): Plugin {
             const cached = await cache.match(rootContentAssetPath);
 
             if (!cached) {
-                context.logger?.warn(
+                context.logger.warn(
                     `serve-root-from-asset: asset "${rootContentAssetPath}" not found in the cache "${cacheName}"`
                 );
                 return undefined;
